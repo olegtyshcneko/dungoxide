@@ -96,3 +96,7 @@ pub enum DungeonBuildError {
     NoBuildAlgorithmProvided
 }
 ```
+
+# Acknowledgments
+This project is done as capstone project for Ukranian Rust Summer bootcamp. I want to thank all mentors and organizers for having this great opportunity to learn Rust and meet new people, you did a great job bringing us together!
+Also, I wanted to acknowledge [@mstdungeon] (https://github.com/redsled84), his implementation for room placement algorithm using Kurskal algorithm really helped me to implement my work. Best wishes to him!
