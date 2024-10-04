@@ -100,6 +100,9 @@ pub enum DungeonBuildError {
 # Examples
 In the examples project there is a bevy a project which uses dungoxide to build random dungeons, you can play with it by configuring builder differently with different algorithms.
 
+<img src="https://github.com/olegtyshcneko/dungoxide/blob/bdc481687b0b2b35bbf0d18d8968a87d2d52a231/readme/binary_partition_example.png" width="320" height="320" />
+<img src="https://github.com/olegtyshcneko/dungoxide/blob/bdc481687b0b2b35bbf0d18d8968a87d2d52a231/readme/room_placement_example.png" width="320" height="320" />
+
 # Acknowledgments
 This project is done as capstone project for Ukranian Rust Summer bootcamp. I want to thank all mentors and organizers for having this great opportunity to learn Rust and meet new people, you did a great job bringing us together!
 Also, I wanted to acknowledge [@mstdungeon] (https://github.com/redsled84), his implementation for room placement algorithm using Kurskal algorithm really helped me to implement my work. Best wishes to him!
