@@ -68,7 +68,7 @@ Another important part of the library is DungeonConfigBuilder - it allows to con
 
 ```Rust
 let dungeon = DungeonConfigBuilder::new()
-        .dungeon_size(DungeonSize { width: w, height: h4 })
+        .dungeon_size(DungeonSize { width: w, height: h })
         .room_size(RoomSize { min_room_size: min_size, max_room_size: max_size })
         .build_algorithm(BinaryPartitionBuilder)
         .should_place_doors(false)
@@ -96,6 +96,9 @@ pub enum DungeonBuildError {
     NoBuildAlgorithmProvided
 }
 ```
+
+# Examples
+In the examples project there is a bevy a project which uses dungoxide to build random dungeons, you can play with it by configuring builder differently with different algorithms.
 
 # Acknowledgments
 This project is done as capstone project for Ukranian Rust Summer bootcamp. I want to thank all mentors and organizers for having this great opportunity to learn Rust and meet new people, you did a great job bringing us together!
