@@ -19,10 +19,10 @@ pub struct Dungeon {
 
 #[Error(desc = "Dungeon generation error", fmt = debug)]
 pub enum DungeonBuildError {
-    #[error(desc = "Size of map is not valid", fmt = display)]
-    InvalidSize(String),
-    #[error(desc = "Room min max configs are invalid", fmt = display)]
-    InvalidRoomSize(String),
+    #[error(desc = "Size of map is not valid: width = {0}, height = {1}", fmt = display)]
+    InvalidSize(usize, usize),
+    #[error(desc = "Room min max configs are invalid: min_size = {0}, max_size: {1}", fmt = display)]
+    InvalidRoomSize(usize, usize),
     #[error(desc = "Dungeon map size should not be less than room size", fmt = display)]
     RoomTooLargeForDungeon,
     #[error(desc = "No room was created, check configurations or try one more time", fmt = display)]
@@ -40,7 +40,7 @@ pub struct DungeonSize {
 impl DungeonSize {
     pub fn validate(&self) -> Result<(), DungeonBuildError> {
         if self.width == 0 || self.height == 0 {
-            return Err(DungeonBuildError::InvalidSize("Width and height must be bigger or equals to 5".to_owned()))
+            return Err(DungeonBuildError::InvalidSize(self.width, self.height));
         }
 
         Ok(())
@@ -64,11 +64,11 @@ pub struct RoomSize {
 impl RoomSize {
     pub fn validate(&self) -> Result<(), DungeonBuildError> {
         if self.min_room_size == 0 || self.max_room_size == 0 {
-            return Err(DungeonBuildError::InvalidRoomSize("Room size must be greater than 0".to_owned()));
+            return Err(DungeonBuildError::InvalidRoomSize(self.min_room_size, self.max_room_size));
         }
 
         if self.min_room_size > self.max_room_size {
-            return Err(DungeonBuildError::InvalidRoomSize("Room maximum size must be greater or equal to minimum size".to_owned()));
+            return Err(DungeonBuildError::InvalidRoomSize(self.min_room_size, self.max_room_size));
         }
 
         Ok(())

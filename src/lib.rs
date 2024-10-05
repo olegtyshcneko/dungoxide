@@ -38,7 +38,7 @@ mod tests {
 
         assert!(matches!(
             result,
-            Err(DungeonBuildError::InvalidRoomSize(_))
+            Err(DungeonBuildError::InvalidRoomSize(_, _))
         ));
     }
 
@@ -51,7 +51,7 @@ mod tests {
 
         assert!(matches!(
             result,
-            Err(DungeonBuildError::InvalidSize(_))
+            Err(DungeonBuildError::InvalidSize(_, _))
         ));
     }
 
@@ -64,7 +64,7 @@ mod tests {
 
         assert!(matches!(
             result,
-            Err(DungeonBuildError::InvalidSize(_))
+            Err(DungeonBuildError::InvalidSize(_, _))
         ));
     }
 
@@ -77,7 +77,7 @@ mod tests {
 
         assert!(matches!(
             result,
-            Err(DungeonBuildError::InvalidRoomSize(_))
+            Err(DungeonBuildError::InvalidRoomSize(_, _))
         ));
     }
 
@@ -90,7 +90,7 @@ mod tests {
 
         assert!(matches!(
             result,
-            Err(DungeonBuildError::InvalidRoomSize(_))
+            Err(DungeonBuildError::InvalidRoomSize(_, _))
         ));
     }
 
